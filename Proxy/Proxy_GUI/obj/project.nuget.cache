@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "T3NtjAYBOvfNMTaKB2o2lIYhzl2j/igP6ji7HGGGiL/ZWZqwCxdOCh37VVPozH+GO9QGplOalt1VjSlQp+e8Vg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Daniele\\Desktop\\Altro\\7)Test_Porgrammi\\Fatti\\ProxyUPP\\Proxy\\Proxy_GUI\\Proxy_GUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Daniele\\.nuget\\packages\\leaf.xnet\\5.2.10\\leaf.xnet.5.2.10.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Proxy</name>
+    </assembly>
+    <members>
+        <member name="T:Proxy.Proxy_Tool">
+            <summary>
+            Proxy recovery and testing class
+            </summary>
+        </member>
+        <member name="F:Proxy.Proxy_Tool.Ip_Rec">
+            <summary>
+            Event to warn that the retrieval of the ip addresses is finished
+            </summary>
+        </member>
+        <member name="F:Proxy.Proxy_Tool.Test_Rec">
+            <summary>
+            Event to warn that the ip address test is finished
+            </summary>
+        </member>
+        <member name="F:Proxy.Proxy_Tool.Task_Token">
+            <summary>
+            Field to end the tests
+            </summary>
+        </member>
+        <member name="F:Proxy.Proxy_Tool.Test_Start">
+            <summary>
+            Field to check if the test has been started
+            </summary>
+        </member>
+        <member name="M:Proxy.Proxy_Tool.Recovery(Proxy.Proxy_Tool.Proxy_Type)">
+            <summary>
+            Method to retrieve ip addresses from sources synchronously
+            </summary>
+            <param name="Type">Type of proxy to retrieve</param>
+            <returns>Returns the IPRec instance containing the retrieved ip addresses</returns>
+        </member>
+        <member name="M:Proxy.Proxy_Tool.Recovery_Async(Proxy.Proxy_Tool.Proxy_Type)">
+            <summary>
+            Method to retrieve ip addresses from sources asynchronously
+            </summary>
+            <param name="Type">Type of proxy to retrieve</param>
+            <returns>Returns the IPRec instance containing the retrieved ip addresses</returns>
+        </member>
+        <member name="M:Proxy.Proxy_Tool.Test(Proxy.Proxy_Tool.Proxy_Type,System.String[],System.Byte)">
+            <summary>
+            Method for testing IP addresses synchronously
+            </summary>
+            <param name="Type">Type of proxy to test</param>
+            <param name="Ips">IP addresses to be tested</param>
+            <param name="Threads">Parallel threads</param>
+            <returns>Returns the TestRec instance containing the tested ip addresses</returns>
+        </member>
+        <member name="M:Proxy.Proxy_Tool.Test_Async(Proxy.Proxy_Tool.Proxy_Type,System.String[],System.Byte)">
+            <summary>
+            Method for testing IP addresses asynchronously
+            </summary>
+            <param name="Type">Type of proxy to test</param>
+            <param name="Ips">IP addresses to be tested</param>
+            <param name="Threads">Parallel threads</param>
+            <returns>Returns the TestRec instance containing the tested ip addresses</returns>
+        </member>
+        <member name="T:Proxy.Proxy_Tool.Proxy_Type">
+            <summary>
+            Enum of proxy types to retrieve / test
+            </summary>
+        </member>
+        <member name="M:Proxy.Proxy_Tool.Test_Stop">
+            <summary>
+            Method to stop the ip address test
+            </summary>
+        </member>
+        <member name="T:Proxy.IPRec">
+            <summary>
+            Class to hold the retrieved ip addresses
+            </summary>
+        </member>
+        <member name="F:Proxy.IPRec.Ips">
+            <summary>
+            List with the ip addresses found
+            </summary>
+        </member>
+        <member name="P:Proxy.IPRec.Ip_Set">
+            <summary>
+            Properties to set the ip address found
+            </summary>
+        </member>
+        <member name="P:Proxy.IPRec.Ips_Get">
+            <summary>
+            Property to retrieve the ip addresses found in array format
+            </summary>
+        </member>
+        <member name="P:Proxy.IPRec.Ips_Count">
+            <summary>
+            Properties to retrieve the number of ip found
+            </summary>
+        </member>
+        <member name="T:Proxy.TestRec">
+            <summary>
+            Class to hold tested IP addresses
+            </summary>
+        </member>
+        <member name="F:Proxy.TestRec.Ips_Val">
+            <summary>
+            List with valid ip addresses found
+            </summary>
+        </member>
+        <member name="P:Proxy.TestRec.Ip_Val_Set">
+            <summary>
+            Properties to set the valid ip address found
+            </summary>
+        </member>
+        <member name="P:Proxy.TestRec.Ips_Val_Get">
+            <summary>
+            Property to retrieve valid ip addresses in array format
+            </summary>
+        </member>
+        <member name="P:Proxy.TestRec.Ips_Val_Count">
+            <summary>
+            Properties to retrieve the number of ip found
+            </summary>
+        </member>
+    </members>
+</doc>

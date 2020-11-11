@@ -1,0 +1,54 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Proxy_GUI/1.0.0": {
+        "dependencies": {
+          "Proxy": "1.0.0"
+        },
+        "runtime": {
+          "Proxy_GUI.dll": {}
+        }
+      },
+      "Leaf.xNet/5.2.10": {
+        "runtime": {
+          "lib/netstandard2.0/Leaf.xNet.dll": {
+            "assemblyVersion": "5.2.10.0",
+            "fileVersion": "5.2.10.0"
+          }
+        }
+      },
+      "Proxy/1.0.0": {
+        "dependencies": {
+          "Leaf.xNet": "5.2.10"
+        },
+        "runtime": {
+          "Proxy.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Proxy_GUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Leaf.xNet/5.2.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Oze0nomQponksY0Cc4KtaqHCAqzaIeIaFXKz8m/F4gnRARtIjUlUYl6+jYETBqwChEFkz/0jH4iGS+M5dn8TFQ==",
+      "path": "leaf.xnet/5.2.10",
+      "hashPath": "leaf.xnet.5.2.10.nupkg.sha512"
+    },
+    "Proxy/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

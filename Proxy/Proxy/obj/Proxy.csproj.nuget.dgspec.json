@@ -1,0 +1,69 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Daniele\\Desktop\\Altro\\7)Test_Porgrammi\\Fatti\\ProxyUPP\\Proxy\\Proxy\\Proxy.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Daniele\\Desktop\\Altro\\7)Test_Porgrammi\\Fatti\\ProxyUPP\\Proxy\\Proxy\\Proxy.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Daniele\\Desktop\\Altro\\7)Test_Porgrammi\\Fatti\\ProxyUPP\\Proxy\\Proxy\\Proxy.csproj",
+        "projectName": "Proxy",
+        "projectPath": "C:\\Users\\Daniele\\Desktop\\Altro\\7)Test_Porgrammi\\Fatti\\ProxyUPP\\Proxy\\Proxy\\Proxy.csproj",
+        "packagesPath": "C:\\Users\\Daniele\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Daniele\\Desktop\\Altro\\7)Test_Porgrammi\\Fatti\\ProxyUPP\\Proxy\\Proxy\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Daniele\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Leaf.xNet": {
+              "target": "Package",
+              "version": "[5.2.10, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
