@@ -1,6 +1,6 @@
 # Proxime
 
-![](https://github.com/IlTuoNome/Mytest/blob/main/Thumbnail.png)
+![](https://github.com/IlTuoNome/Proxime/blob/master/Proxy/Proxy_GUI/Thumbnail.png)
 
 # Table of contents
 1. [Library](https://github.com/IlTuoNome/Mytest#library)
