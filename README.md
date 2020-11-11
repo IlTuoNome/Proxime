@@ -3,18 +3,18 @@
 ![](https://github.com/IlTuoNome/Proxime/blob/master/Proxy/Proxy_GUI/Thumbnail.png)
 
 # Table of contents
-1. [Library](https://github.com/IlTuoNome/Mytest#library)
-2. [How to](https://github.com/IlTuoNome/Mytest#how-to)
+1. [Library](https://github.com/IlTuoNome/proxime#library)
+2. [How to](https://github.com/IlTuoNome/proxime#how-to)
 
-    1 [Start](https://github.com/IlTuoNome/Mytest#start)
+    1 [Start](https://github.com/IlTuoNome/proxime#start)
 
-    2 [Use events](https://github.com/IlTuoNome/Mytest#use-events) 
+    2 [Use events](https://github.com/IlTuoNome/proxime#use-events) 
 
-    3 [Use methods](https://github.com/IlTuoNome/Mytest#use-methods)
+    3 [Use methods](https://github.com/IlTuoNome/proxime#use-methods)
 
-    4 [Use Enum](https://github.com/IlTuoNome/Mytest#use-enum)
+    4 [Use Enum](https://github.com/IlTuoNome/proxime#use-enum)
 
-3. [Implementation](https://github.com/IlTuoNome/Mytest/blob/main/README.md#implementation)
+3. [Implementation](https://github.com/IlTuoNome/proxime#implementation)
 
 # Library
 We can use the library to retrieve a list of http/https, socks4/5 proxies and test them.
