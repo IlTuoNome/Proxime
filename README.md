@@ -22,7 +22,7 @@ We can use the library to retrieve a list of http/https, socks4/5 proxies and te
 
 # How to
 ### Start
-Import Proxy.dll by adding reference to the project
+Import Proxy.dll by adding reference to the project.
 
 Add the namespace:
 
