@@ -1,0 +1,401 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Proxy_GUI"
+    x:Class="Proxy_GUI.EventClass"
+    >
+    
+    <!--Custom Controls-->
+    
+    <!--NumericUpDown-->
+    <ControlTemplate x:Key="RepeatButtonModUp" TargetType="{x:Type RepeatButton}">
+        <Border x:Name="border" Background="Transparent" Width="11.18" Height="6.59">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="PathUp" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                <EasingColorKeyFrame KeyTime="00:00:00" Value="#FF0061FF"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="PathUp" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                <EasingColorKeyFrame KeyTime="00:00:00" Value="#B20061FF"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Path x:Name="PathUp" Width="11.18" Height="6.59" Stretch="uniform" Data="M 8.119999885559082 14.71000003814697 L 12 10.82999992370605 L 15.88000011444092 14.71000003814697 C 16.27000045776367 15.10000038146973 16.89999961853027 15.10000038146973 17.29000091552734 14.71000003814697 C 17.68000030517578 14.31999969482422 17.68000030517578 13.69000053405762 17.29000091552734 13.30000019073486 L 12.69999980926514 8.710000038146973 C 12.30999946594238 8.319999694824219 11.68000030517578 8.319999694824219 11.28999996185303 8.710000038146973 L 6.699999809265137 13.30000019073486 C 6.309999942779541 13.69000053405762 6.309999942779541 14.31999969482422 6.699999809265137 14.71000003814697 C 7.089999675750732 15.09000015258789 7.729999542236328 15.10000038146973 8.119999885559082 14.71000003814697 Z" Fill="#FF369FFF" Canvas.Left="0.000030517578125"/>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="RepeatButtonModDown" TargetType="{x:Type RepeatButton}">
+        <Border x:Name="border" Background="Transparent" Width="11.18" Height="6.59">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="PathDown" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                <EasingColorKeyFrame KeyTime="00:00:00" Value="#FF0061FF"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="PathDown" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                <EasingColorKeyFrame KeyTime="00:00:00" Value="#B20061FF"/>
+                            </ColorAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Path x:Name="PathDown" Width="11.18" Height="6.59" Stretch="uniform" Data="M 8.119999885559082 9.289999961853027 L 12 13.17000007629395 L 15.88000011444092 9.289999961853027 C 16.27000045776367 8.899999618530273 16.89999961853027 8.899999618530273 17.29000091552734 9.289999961853027 C 17.68000030517578 9.680000305175781 17.68000030517578 10.30999946594238 17.29000091552734 10.69999980926514 L 12.70000076293945 15.28999996185303 C 12.3100004196167 15.68000030517578 11.68000030517578 15.68000030517578 11.29000091552734 15.28999996185303 L 6.699999809265137 10.69999980926514 C 6.309999942779541 10.30999946594238 6.309999942779541 9.680000305175781 6.699999809265137 9.289999961853027 C 7.089999675750732 8.909999847412109 7.729999542236328 8.899999618530273 8.119999885559082 9.289999961853027 Z" Fill="#FF369FFF" VerticalAlignment="Bottom"  />
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type local:NumericUpDown}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:NumericUpDown}" >
+                    <Border x:Name="BorderNumUpDown" Background="{DynamicResource NumericUpDown_Settings_Background}" Width="63" Height="31" CornerRadius="10,10,10,10">
+                        <Border.Effect>
+                            <DropShadowEffect Direction="270" Color="{DynamicResource NumericUpDown_Settings_Background_Shadow}" ShadowDepth="{DynamicResource NonButton_ShadowDepth}" BlurRadius="10" Opacity="0.5"/>
+                        </Border.Effect>
+                        <Grid>
+                            <TextBlock x:Name="TextblockNumUpDown"  FontFamily="Poppins" Text="{Binding RelativeSource={RelativeSource FindAncestor, 
+                       AncestorType={x:Type local:NumericUpDown}}, 
+                       Path=Valore}" Margin="10,5,26,5" Width="27" FontSize="15" FontWeight="Regular" Foreground="#FFF4F4F4" Height="21"/>
+                            <RepeatButton x:Name="RepeatUp" Template="{StaticResource RepeatButtonModUp}" Margin="42,6.4,9.9,17"/>
+                            <RepeatButton x:Name="RepeatDown" Template="{StaticResource RepeatButtonModDown}" Margin="42,0,10,6" VerticalAlignment="Bottom"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--DataGrid-->
+    <Style TargetType="{x:Type local:DataGridMod}">
+        <Setter Property="Foreground"
+          Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="RowDetailsVisibilityMode"
+          Value="VisibleWhenSelected" />
+        <Setter Property="ScrollViewer.CanContentScroll"
+          Value="true" />
+        <Setter Property="ScrollViewer.PanningMode"
+          Value="Both" />
+        <Setter Property="Stylus.IsFlicksEnabled"
+          Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:DataGridMod}">
+                    <Grid>
+                        <Border x:Name="border"
+                SnapsToDevicePixels="True"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                Padding="{TemplateBinding Padding}" Background="{x:Null}">
+                            <ScrollViewer x:Name="DG_ScrollViewer"
+                        Focusable="false"
+                        Background="Black">
+                                <ScrollViewer.Template>
+                                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+
+                                            <Button Focusable="false"
+                          Command="{x:Static DataGrid.SelectAllCommand}"
+                          Style="{DynamicResource {ComponentResourceKey 
+                      ResourceId=DataGridSelectAllButtonStyle, 
+                      TypeInTargetAssembly={x:Type DataGrid}}}"
+                          Visibility="{Binding HeadersVisibility, 
+                      ConverterParameter={x:Static DataGridHeadersVisibility.All}, 
+                      Converter={x:Static DataGrid.HeadersVisibilityConverter}, 
+                      RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                          Width="{Binding CellsPanelHorizontalOffset, 
+                      RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+
+                                            <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter"
+                                                  Grid.Column="1"
+                                                  Visibility="{Binding HeadersVisibility, 
+                      ConverterParameter={x:Static DataGridHeadersVisibility.Column}, 
+                      Converter={x:Static DataGrid.HeadersVisibilityConverter}, 
+                      RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+
+                                            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                          Grid.ColumnSpan="2"
+                                          Grid.Row="1"
+                                          CanContentScroll="{TemplateBinding CanContentScroll}"  />
+
+                                            <ScrollBar x:Name="PART_VerticalScrollBar"
+                             Grid.Column="2"
+                             Grid.Row="1"
+                             Orientation="Vertical"
+                             ViewportSize="{TemplateBinding ViewportHeight}"
+                             Maximum="{TemplateBinding ScrollableHeight}"
+                             Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                             Value="{Binding VerticalOffset, Mode=OneWay, 
+                      RelativeSource={RelativeSource TemplatedParent}}"/>
+
+                                            <Grid Grid.Column="1"
+                        Grid.Row="2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="{Binding NonFrozenColumnsViewportHorizontalOffset, 
+                          RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <ScrollBar x:Name="PART_HorizontalScrollBar"
+                               Grid.Column="1"
+                               Orientation="Horizontal"
+                               ViewportSize="{TemplateBinding ViewportWidth}"
+                               Maximum="{TemplateBinding ScrollableWidth}"
+                               Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                               Value="{Binding HorizontalOffset, Mode=OneWay, 
+                        RelativeSource={RelativeSource TemplatedParent}}"/>
+                                            </Grid>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </ScrollViewer.Template>
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            </ScrollViewer>
+                        </Border>
+                        <Grid x:Name="Grid_Up" Margin="239,267,16,16" VerticalAlignment="Bottom" Width="40" Height="40" Visibility="{TemplateBinding UpshowVisibility}">
+                            <Ellipse x:Name="Ellipse_Up" Fill="#FF369FFF" Height="40" Width="40">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect Color="{DynamicResource ProgressBar_Loading_Shadow}" Direction="270" ShadowDepth="{DynamicResource Button_ShadowDepth}" BlurRadius="10" Opacity="0.5"/>
+                                </Ellipse.Effect>
+                            </Ellipse>
+                            <Path x:Name="Path_Up" Data="M 13.77845287322998 20.18114471435547 L 13.77845287322998 8.106403350830078 L 19.1005687713623 13.38167095184326 C 19.52589988708496 13.80326080322266 20.22388458251953 13.80326080322266 20.64921569824219 13.38167095184326 C 21.07454681396484 12.96008205413818 21.07454681396484 12.27905464172363 20.64921569824219 11.85746574401855 L 13.46218109130859 4.733691692352295 C 13.03684902191162 4.312103271484375 12.34977149963379 4.312103271484375 11.92443943023682 4.733691692352295 L 4.726500988006592 11.84665489196777 C 4.301167964935303 12.26824474334717 4.301167964935303 12.94927310943604 4.726500988006592 13.3708610534668 C 5.151834011077881 13.79244995117188 5.838910102844238 13.79244995117188 6.264242649078369 13.3708610534668 L 11.59725952148438 8.106403350830078 L 11.59725952148438 20.18114471435547 C 11.59725952148438 20.77569389343262 12.08802700042725 21.26214218139648 12.68785762786865 21.26214218139648 C 13.28768539428711 21.26214218139648 13.77845287322998 20.77569389343262 13.77845287322998 20.18114471435547 Z" Fill="{DynamicResource DataGrid_Results_Path_Up}" Height="16.84" Stretch="uniform" Width="16.56"/>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true" SourceName="Ellipse_Up">
+                            <Setter Property="Fill" Value="#0061FF" TargetName="Ellipse_Up"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true" SourceName="Path_Up">
+                            <Setter Property="Fill" Value="#0061FF" TargetName="Ellipse_Up"/>
+                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseLeftButtonDown" SourceName="Ellipse_Up">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="Ellipse_Up" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                        <EasingColorKeyFrame KeyTime="00:00:00" Value="#B20061FF"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseUp" SourceName="Ellipse_Up">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="Ellipse_Up" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                        <EasingColorKeyFrame KeyTime="00:00:00" Value="#0061FF"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeftButtonDown" SourceName="Path_Up">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="Ellipse_Up" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                        <EasingColorKeyFrame KeyTime="00:00:00" Value="#B20061FF"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseUp" SourceName="Path_Up">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="Ellipse_Up" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                        <EasingColorKeyFrame KeyTime="00:00:00" Value="#0061FF"/>
+                                    </ColorAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsGrouping"
+             Value="true">
+                <Setter Property="ScrollViewer.CanContentScroll"
+              Value="false" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!--ComboBox-->
+    <ControlTemplate x:Key="ComboBoxToggleMod" TargetType="{x:Type ToggleButton}">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CheckStates">
+                    <VisualState x:Name="Checked">
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Border_Toggle" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="41"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border_Toggle" Storyboard.TargetProperty="(Border.CornerRadius)">
+                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <CornerRadius>10,10,0,0</CornerRadius>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Border_Toggle" Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.Opacity)">
+                                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unchecked"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border x:Name="Border_Toggle" CornerRadius="10,10,10,10" BorderThickness="0" Background="#FF369FFF"  Width="88" Height="31" MouseLeftButtonDown="Border_Toggle_MouseLeftButtonDown" MouseUp="Border_Toggle_MouseUp" MouseEnter="Border_Toggle_MouseEvent" MouseLeave="Border_Toggle_MouseEvent">
+                <Border.Effect>
+                    <DropShadowEffect x:Name="Border_Shadow" Color="{DynamicResource Combobox_Settings_Proxy_Background_Shadow}" Direction="270" ShadowDepth="2" BlurRadius="10" Opacity="0.5"/>
+                </Border.Effect>
+                <Path x:Name="Arrow" Stretch="uniform" Data="M 8.710000038146973 11.71000003814697 L 11.30000019073486 14.30000019073486 C 11.69000053405762 14.69000053405762 12.31999969482422 14.69000053405762 12.71000003814697 14.30000019073486 L 15.30000019073486 11.71000003814697 C 15.93000030517578 11.07999992370605 15.48000049591064 10 14.59000015258789 10 L 9.409999847412109 10 C 8.519999504089355 10 8.079999923706055 11.07999992370605 8.710000038146973 11.71000003814697 Z" Fill="#fff4f4f4" HorizontalAlignment="Right" VerticalAlignment="Top" Width="7.18" Height="4.59" Margin="66,14,9.8,12.4"/>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="ComboboxitemMod"
+       TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="SnapsToDevicePixels"
+          Value="true" />
+        <Setter Property="OverridesDefaultStyle"
+          Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                    <!--Singolo elemento nella lista-->
+                    <Border x:Name="Border"
+                Padding="0"
+                SnapsToDevicePixels="true"
+                Background="Transparent" CornerRadius="5,5,5,5" Margin="8,0,8,0">
+                        <ContentPresenter x:Name="Border_F" Margin="5,5,0,5"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource Combobox_Settings_Proxy_List_Selected_Background}" TargetName="Border"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:ComboboxModde}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource ComboboxitemMod}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ComboboxModde}">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="EditStates">
+                                <VisualState x:Name="Editable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                 Storyboard.TargetName="PART_EditableTextBox">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                            Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames
+                      Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                 Storyboard.TargetName="ContentSite">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                            Value="{x:Static Visibility.Hidden}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Uneditable" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <!--Bottone definito nel controltemplate ComboBoxToggleMod -->
+                        <ToggleButton
+                            Name="ToggleButtone"
+                            Template="{StaticResource ComboBoxToggleMod}"
+                            IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                            ClickMode="Press">
+                        </ToggleButton>
+                        <!--Testo recuperato dalla lista-->
+                        <Canvas Margin="10,4,34,6">
+                            <ContentPresenter
+                            Name="ContentSite"
+                            IsHitTestVisible="False"
+                            Content="{TemplateBinding SelectionBoxItem}"
+                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Stretch"/>
+                            <ContentPresenter
+                            Name="ContentSite_Copy"
+                            IsHitTestVisible="False"
+                            Content="{TemplateBinding Ltext}"
+                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Stretch"
+                            Visibility="{TemplateBinding Lvis}"/>
+                        </Canvas>
+                        <!--Editor del testo recuperato dalla lista-->
+                        <!--Discesa lista-->
+                        <Popup
+                            Name="Popup"
+                            Placement="Bottom"
+                            IsOpen="{TemplateBinding IsDropDownOpen}"
+                            AllowsTransparency="True"
+                            Focusable="False"
+                            PopupAnimation="Slide" HorizontalAlignment="Stretch" VerticalAlignment="Center" >
+                            <!--Griglia discesa lista-->
+                            <Grid
+                              Name="DropDown"
+                              SnapsToDevicePixels="True"               
+                              MinWidth="{TemplateBinding ActualWidth}"
+                              MaxHeight="{TemplateBinding MaxDropDownHeight}" Margin="3,20,3,20" >
+                                <!--Bordo generale nella lista-->
+                                <Border
+                                    x:Name="DropDownBorder"
+                                    BorderThickness="0" Background="{DynamicResource Combobox_Settings_Proxy_List_Background}" CornerRadius="10,10,10,10" >
+                                    <Border.Effect>
+                                        <DropShadowEffect Direction="90" ShadowDepth="2" BlurRadius="10" Opacity="0.5" Color="#606060"/>
+                                    </Border.Effect>
+                                </Border>
+                                <Border
+                                    x:Name="DropDownBorder_Down"
+                                    BorderThickness="0" Background="{DynamicResource Combobox_Settings_Proxy_List_Background}" CornerRadius="10,10,10,10" >
+                                    <Border.Effect>
+                                        <DropShadowEffect Direction="270" ShadowDepth="1" BlurRadius="10" Opacity="0.5" Color="{DynamicResource Combobox_Settings_Proxy_Background_Shadow }"/>
+                                    </Border.Effect>
+                                </Border>
+                                <!--Lettura singolo elemento nella lista-->
+                                <ScrollViewer 
+                            SnapsToDevicePixels="True" Margin="0,8,0,8">
+                                    <StackPanel IsItemsHost="True"
+                            KeyboardNavigation.DirectionalNavigation="Contained" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>
