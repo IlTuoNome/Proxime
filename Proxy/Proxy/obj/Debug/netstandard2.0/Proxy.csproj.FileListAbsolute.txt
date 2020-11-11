@@ -19,3 +19,15 @@ C:\Users\Daniele\Desktop\ProxyUPP\Proxy\Proxy\obj\Debug\netstandard2.0\Proxy.pdb
 C:\Users\Daniele\Desktop\ProxyUPP\Proxy\Proxy\bin\Debug\netstandard2.0\Proxy.xml
 C:\Users\Daniele\Desktop\ProxyUPP\Proxy\Proxy\bin\Debug\netstandard2.0\Leaf.xNet.dll
 C:\Users\Daniele\Desktop\ProxyUPP\Proxy\Proxy\obj\Debug\netstandard2.0\Proxy.csproj.CopyComplete
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\bin\Debug\netstandard2.0\Proxy.xml
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\bin\Debug\netstandard2.0\Proxy.deps.json
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\bin\Debug\netstandard2.0\Proxy.dll
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\bin\Debug\netstandard2.0\Proxy.pdb
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\bin\Debug\netstandard2.0\Leaf.xNet.dll
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\obj\Debug\netstandard2.0\Proxy.csprojAssemblyReference.cache
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\obj\Debug\netstandard2.0\Proxy.AssemblyInfoInputs.cache
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\obj\Debug\netstandard2.0\Proxy.AssemblyInfo.cs
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\obj\Debug\netstandard2.0\Proxy.csproj.CoreCompileInputs.cache
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\obj\Debug\netstandard2.0\Proxy.csproj.CopyComplete
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\obj\Debug\netstandard2.0\Proxy.dll
+C:\Users\Daniele\Desktop\Altro\7)Test_Porgrammi\Fatti\ProxyUPP\Proxy\Proxy\obj\Debug\netstandard2.0\Proxy.pdb
