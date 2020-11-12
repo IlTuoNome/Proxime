@@ -274,6 +274,8 @@ namespace Proxy_GUI
         /// </summary>
         private async void Grid_Home_Scan_MouseUp(object sender, MouseButtonEventArgs e)
         {
+            Button_Loading_See.IsEnabled = false;
+            Button_Loading_Save.IsEnabled = false;
             VisualStateManager.GoToElementState(Grid_Base, "MouseLoadingClick", false);
             ProgressBar_Loading.Value = 30;
             TextBlock_Loading_Info.Margin = new Thickness(245, 256, 242, 268);
@@ -293,9 +295,13 @@ namespace Proxy_GUI
                         Scan_Test = true;
                         break;
                 }
-                VisualStateManager.GoToElementState(Grid_Base, "MouseLoadingFinish", false);
+                TextBlock_Loading_Info.Margin = new Thickness(245, 256, 219, 268);
+                TextBlock_Loading_Info.Text = "Results are ready";
+                ProgressBar_Loading.Value = 100;
+                Button_Loading_See.IsEnabled = true;
+                Button_Loading_Save.IsEnabled = true;
             }
-            catch (Exception error)
+            catch(Exception error)
             {
                 MessageBox.Show(error.Message);
                 VisualStateManager.GoToElementState(Grid_Base, "MouseUPPClick", false);
@@ -404,8 +410,10 @@ namespace Proxy_GUI
         /// <param name="Path">File path</param>
         private async void Test_Start(string Path)
         {
-            VisualStateManager.GoToElementState(Grid_Base, "MouseLoadingClick", false);
+            Button_Loading_See.IsEnabled = false;
+            Button_Loading_Save.IsEnabled = false;
             string[] Ips = File.ReadAllLines(Path);
+            VisualStateManager.GoToElementState(Grid_Base, "MouseLoadingClick", false);
             ProgressBar_Loading.Value = 60;
             TextBlock_Loading_Info.Margin = new Thickness(251, 256, 237, 268);
             TextBlock_Loading_Info.Text = "Testing the proxies...";
@@ -414,9 +422,13 @@ namespace Proxy_GUI
             {
                 testRec = await Proxy.Test_Async((Proxy_Tool.Proxy_Type)Enum.Parse(typeof(Proxy_Tool.Proxy_Type), Combobox_Settings_Proxy.Ltext.ToLower()), Ips, NumericUpDown_Settings_Proxy.Valore);
                 Scan_Test = true;
-                VisualStateManager.GoToElementState(Grid_Base, "MouseLoadingFinish", false);
+                ProgressBar_Loading.Value = 100;
+                TextBlock_Loading_Info.Margin = new Thickness(245, 256, 219, 268);
+                TextBlock_Loading_Info.Text = "Results are ready";
+                Button_Loading_See.IsEnabled = true;
+                Button_Loading_Save.IsEnabled = true;
             }
-            catch (Exception error)
+            catch(Exception error)
             {
                 MessageBox.Show(error.Message);
                 VisualStateManager.GoToElementState(Grid_Base, "MouseUPPClick", false);
