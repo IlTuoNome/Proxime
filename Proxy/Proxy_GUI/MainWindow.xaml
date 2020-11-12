@@ -10,7 +10,6 @@
         <WindowChrome CaptionHeight="13" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}"/>
     </WindowChrome.WindowChrome>
     <Window.Resources>
-
         <ControlTemplate x:Key="CheckBoxMod" TargetType="{x:Type CheckBox}">
             <Grid>
                 <VisualStateManager.VisualStateGroups>
@@ -357,27 +356,14 @@
 
         <local:PortConverter x:Key="portconverter"/>
         <local:IPConverter x:Key="ipConverter" />
-
     </Window.Resources>
     <Grid x:Name="Grid_Base" Visibility="Visible">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="MouseInteract">
                 <VisualState x:Name="MouseSettingsClick">
                     <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Home_Scan" Storyboard.TargetProperty="(UIElement.Visibility)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Home_Test" Storyboard.TargetProperty="(UIElement.Visibility)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}"/>
-                        </ObjectAnimationUsingKeyFrames>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Settings" Storyboard.TargetProperty="(UIElement.Visibility)">
                             <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Loading" Storyboard.TargetProperty="(UIElement.Visibility)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Results" Storyboard.TargetProperty="(UIElement.Visibility)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}"/>
                         </ObjectAnimationUsingKeyFrames>
                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Home" Storyboard.TargetProperty="(FrameworkElement.Width)">
                             <EasingDoubleKeyFrame KeyTime="00:00:00" Value="85"/>
@@ -385,23 +371,6 @@
                         <StringAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Home" Storyboard.TargetProperty="(TextBlock.Text)">
                             <DiscreteStringKeyFrame KeyTime="00:00:00" Value="Settings"/>
                         </StringAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Upp" Storyboard.TargetProperty="(FrameworkElement.Cursor)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Cursor>Hand</Cursor>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <BooleanAnimationUsingKeyFrames Storyboard.TargetName="Path_Bar_Settings" Storyboard.TargetProperty="(UIElement.IsEnabled)">
-                            <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="False"/>
-                        </BooleanAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bord_Bar_Settings" Storyboard.TargetProperty="(FrameworkElement.Cursor)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Cursor>Arrow</Cursor>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Path_Bar_Settings" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
                             <EasingColorKeyFrame KeyTime="00:00:00" Value="#FF666666"/>
                         </ColorAnimationUsingKeyFrames>
@@ -421,59 +390,55 @@
                         <StringAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Home" Storyboard.TargetProperty="(TextBlock.Text)">
                             <DiscreteStringKeyFrame KeyTime="00:00:00" Value="Loading"/>
                         </StringAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Home_Scan" Storyboard.TargetProperty="(UIElement.Visibility)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Home_Test" Storyboard.TargetProperty="(UIElement.Visibility)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}"/>
-                        </ObjectAnimationUsingKeyFrames>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Loading" Storyboard.TargetProperty="(UIElement.Visibility)">
                             <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
                         </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Upp" Storyboard.TargetProperty="(FrameworkElement.Cursor)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Cursor>Hand</Cursor>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <BooleanAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Upp" Storyboard.TargetProperty="(UIElement.IsEnabled)">
-                            <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="False"/>
-                        </BooleanAnimationUsingKeyFrames>
                         <BooleanAnimationUsingKeyFrames Storyboard.TargetName="Bord_Bar_Settings" Storyboard.TargetProperty="(UIElement.IsEnabled)">
-                            <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="False"/>
-                        </BooleanAnimationUsingKeyFrames>
-                        <BooleanAnimationUsingKeyFrames Storyboard.TargetName="Path_Bar_Settings" Storyboard.TargetProperty="(UIElement.IsEnabled)">
                             <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="False"/>
                         </BooleanAnimationUsingKeyFrames>
                     </Storyboard>
                 </VisualState>
+                <VisualState x:Name="MouseLoadingFinish">
+                    <Storyboard>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Home" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                            <EasingDoubleKeyFrame KeyTime="00:00:00" Value="83"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <StringAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Home" Storyboard.TargetProperty="(TextBlock.Text)">
+                            <DiscreteStringKeyFrame KeyTime="00:00:00" Value="Loading"/>
+                        </StringAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Loading" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <BooleanAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Upp" Storyboard.TargetProperty="(UIElement.IsEnabled)">
+                            <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="True"/>
+                        </BooleanAnimationUsingKeyFrames>
+                        <BooleanAnimationUsingKeyFrames Storyboard.TargetName="Button_Loading_See" Storyboard.TargetProperty="(UIElement.IsEnabled)">
+                            <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="True"/>
+                        </BooleanAnimationUsingKeyFrames>
+                        <BooleanAnimationUsingKeyFrames Storyboard.TargetName="Button_Loading_Save" Storyboard.TargetProperty="(UIElement.IsEnabled)">
+                            <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="True"/>
+                        </BooleanAnimationUsingKeyFrames>
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ProgressBar_Loading" Storyboard.TargetProperty="(RangeBase.Value)">
+                            <EasingDoubleKeyFrame KeyTime="00:00:00" Value="100"/>
+                        </DoubleAnimationUsingKeyFrames>
+                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetName="TextBlock_Loading_Info" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                            <EasingThicknessKeyFrame KeyTime="00:00:00" Value="245,256,219,268"/>
+                        </ThicknessAnimationUsingKeyFrames>
+                        <StringAnimationUsingKeyFrames Storyboard.TargetName="TextBlock_Loading_Info" Storyboard.TargetProperty="(TextBlock.Text)">
+                            <DiscreteStringKeyFrame KeyTime="00:00:00" Value="Results are ready"/>
+                        </StringAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
                 <VisualState x:Name="ResultsClick">
                     <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Home_Scan" Storyboard.TargetProperty="(UIElement.Visibility)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Home_Test" Storyboard.TargetProperty="(UIElement.Visibility)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}"/>
-                        </ObjectAnimationUsingKeyFrames>
                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Home" Storyboard.TargetProperty="(FrameworkElement.Width)">
                             <EasingDoubleKeyFrame KeyTime="00:00:00" Value="78"/>
                         </DoubleAnimationUsingKeyFrames>
                         <StringAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Home" Storyboard.TargetProperty="(TextBlock.Text)">
                             <DiscreteStringKeyFrame KeyTime="00:00:00" Value="Results"/>
                         </StringAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Loading" Storyboard.TargetProperty="(UIElement.Visibility)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Hidden}"/>
-                        </ObjectAnimationUsingKeyFrames>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Grid_Results" Storyboard.TargetProperty="(UIElement.Visibility)">
                             <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Upp" Storyboard.TargetProperty="(FrameworkElement.Cursor)">
-                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Cursor>Hand</Cursor>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
                         <BooleanAnimationUsingKeyFrames Storyboard.TargetName="Textblock_Bar_Upp" Storyboard.TargetProperty="(UIElement.IsEnabled)">
                             <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="True"/>
@@ -890,19 +855,19 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Grid x:Name="Grid_Home_Scan" HorizontalAlignment="Left" Height="538" VerticalAlignment="Top" Width="300" Background="{DynamicResource Grid_Home_Scan}" MouseEnter="Grid_Home_Scan_MouseEvent" MouseLeave="Grid_Home_Scan_MouseEvent" MouseLeftButtonDown="Grid_Home_Scan_MouseClick" MouseUp="Grid_Home_Scan_MouseUp" Visibility="Visible" Cursor="Hand" Margin="0,62,0,0">
-            <TextBlock x:Name="Textblock_Home_Scan" Margin="0,201,0,0" Text="Scan" TextWrapping="Wrap" Height="71" FontFamily="Poppins" FontSize="50" FontWeight="Bold" Foreground="{DynamicResource Textblock_Home_Scan}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="129" Cursor="Hand"/>
-            <TextBlock x:Name="Textblock_Home_Scan_Search"  Margin="106,274,107,0" Text="Search for proxies" TextWrapping="Wrap" Height="15" FontFamily="Poppins" FontSize="10" FontWeight="Light" Foreground="{DynamicResource Textblock_Home_Scan_Search}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="89"/>
+            <TextBlock x:Name="Textblock_Home_Scan" Margin="0,201,0,0" Text="Scan" TextWrapping="Wrap" Height="71" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="50" FontWeight="Bold" Foreground="{DynamicResource Textblock_Home_Scan}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="129" Cursor="Hand"/>
+            <TextBlock x:Name="Textblock_Home_Scan_Search"  Margin="106,274,107,0" Text="Search for proxies" TextWrapping="Wrap" Height="15" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="10" FontWeight="Light" Foreground="{DynamicResource Textblock_Home_Scan_Search}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="89"/>
         </Grid>
         <Grid x:Name="Grid_Home_Test" HorizontalAlignment="Left" Height="538" Margin="300,62,0,0" VerticalAlignment="Top" Width="300" Background="{DynamicResource Grid_Home_Test}" MouseEnter="Grid_Home_Test_MouseEvent" MouseLeave="Grid_Home_Test_MouseEvent" MouseLeftButtonDown="Grid_Home_Test_MouseClick" AllowDrop="True" Drop="Grid_Home_Test_DragDrop" PreviewDragEnter="Grid_Home_Test_PreviewDrop" PreviewDragLeave="Grid_Home_Test_PreviewDragLeave" MouseUp="Grid_Home_Test_MouseUp" Visibility="Visible" Cursor="Hand" >
-            <TextBlock x:Name="Textblock_Home_Test" Margin="0,201,0,0" Text="Test" TextWrapping="Wrap" Height="71" FontFamily="Poppins" FontSize="50" FontWeight="Bold" Foreground="{DynamicResource Textblock_Home_Test}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="109"/>
-            <TextBlock x:Name="Textblock_Home_Test_DropBrowse" Margin="112,274,111,0" Text="Drop or browse" TextWrapping="Wrap" Height="15" FontFamily="Poppins" FontSize="10" FontWeight="Light" Foreground="{DynamicResource Textblock_Home_Test_DropBrowse}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="76"/>
+            <TextBlock x:Name="Textblock_Home_Test" Margin="0,201,0,0" Text="Test" TextWrapping="Wrap" Height="71" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="50" FontWeight="Bold" Foreground="{DynamicResource Textblock_Home_Test}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="109"/>
+            <TextBlock x:Name="Textblock_Home_Test_DropBrowse" Margin="112,274,111,0" Text="Drop or browse" TextWrapping="Wrap" Height="15" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="10" FontWeight="Light" Foreground="{DynamicResource Textblock_Home_Test_DropBrowse}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="76"/>
         </Grid>
         <Grid x:Name="Grid_Settings" HorizontalAlignment="Center" Height="538" Margin="0,62,0,0" VerticalAlignment="Top" Width="600" Background="{DynamicResource Grid_Settings}" Visibility="Hidden">
-            <TextBlock x:Name="Textblock_Settings_Test" HorizontalAlignment="Left" Margin="137,97,369,60" Text="Auto Test" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Height="28" FontFamily="Poppins" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource Textblock_Settings_Test}"/>
+            <TextBlock x:Name="Textblock_Settings_Test" HorizontalAlignment="Left" Margin="137,97,369,60" Text="Auto Test" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Height="28" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource Textblock_Settings_Test}"/>
             <CheckBox x:Name="Checkbox_Settings_Test" Content="CheckBox" Margin="419,89,94,0" VerticalAlignment="Top" Template="{StaticResource CheckBoxMod}" Height="47" Width="87" RenderTransformOrigin="0.5,0.5" Checked="Checkbox_Settings_Test_Checked" Unchecked="Checkbox_Settings_Test_Checked"/>
-            <TextBlock x:Name="Textblock_Settings_Threads" HorizontalAlignment="Left" Margin="138,182,293,281" Text="Threads Number" TextWrapping="Wrap" VerticalAlignment="Center" Width="170" Height="28" FontFamily="Poppins" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource Textblock_Settings_Threads}"/>
-            <TextBlock x:Name="Textblock_Settings_Proxy" HorizontalAlignment="Left" Margin="137,318,355,192" Text="Proxy Type" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" Height="28" FontFamily="Poppins" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource Textblock_Settings_Proxy}"/>
-            <local:ComboboxModde x:Name="Combobox_Settings_Proxy" HorizontalAlignment="Left" Margin="377,319,0,0" VerticalAlignment="Top" Width="88" FontFamily="Poppins" FontSize="15" FontWeight="Regular" Foreground="#FFF4F4F4"  ScrollViewer.VerticalScrollBarVisibility="Disabled" Lvis="Visible" SelectedIndex="0" SelectionChanged="Combobox_Settings_Proxy_SelectionChanged">
+            <TextBlock x:Name="Textblock_Settings_Threads" HorizontalAlignment="Left" Margin="138,182,293,281" Text="Threads Number" TextWrapping="Wrap" VerticalAlignment="Center" Width="170" Height="28" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource Textblock_Settings_Threads}"/>
+            <TextBlock x:Name="Textblock_Settings_Proxy" HorizontalAlignment="Left" Margin="137,318,355,192" Text="Proxy Type" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" Height="28" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource Textblock_Settings_Proxy}"/>
+            <local:ComboboxModde x:Name="Combobox_Settings_Proxy" HorizontalAlignment="Left" Margin="377,319,0,0" VerticalAlignment="Top" Width="88" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="15" FontWeight="Regular" Foreground="#FFF4F4F4"  ScrollViewer.VerticalScrollBarVisibility="Disabled" Lvis="Visible" SelectedIndex="0" SelectionChanged="Combobox_Settings_Proxy_SelectionChanged">
                 <TextBlock>Http</TextBlock>
                 <TextBlock>Https</TextBlock>
                 <TextBlock>Socks4</TextBlock>
@@ -911,10 +876,10 @@
             <local:NumericUpDown x:Name="NumericUpDown_Settings_Proxy" HorizontalAlignment="Left" Margin="401,201,0,281" VerticalAlignment="Top" Height="39" Valore="255" Width="63"/>
         </Grid>
         <Grid x:Name="Grid_Loading" HorizontalAlignment="Center" Height="538" Margin="0,62,0,0" VerticalAlignment="Top" Width="600" Background="{DynamicResource Grid_Loading}" Visibility="Hidden">
-            <Button x:Name="Button_Loading_Save" Template="{DynamicResource ButtonModSave}" Content="Save" HorizontalAlignment="Left" Margin="344,300,0,194" VerticalAlignment="Top" Height="43" Width="80" FontFamily="Poppins" FontWeight="Medium" Foreground="#FF369FFF" Background="#FF666666" FontSize="15" Click="Button_Loading_Save_Click" IsEnabled="False" />
+            <Button x:Name="Button_Loading_Save" Template="{DynamicResource ButtonModSave}" Content="Save" HorizontalAlignment="Left" Margin="344,300,0,194" VerticalAlignment="Top" Height="43" Width="80" FontFamily="pack://application:,,,/Fonts/#Poppins" FontWeight="Medium" Foreground="#FF369FFF" Background="#FF666666" FontSize="15" Click="Button_Loading_Save_Click" IsEnabled="False" />
             <ProgressBar x:Name="ProgressBar_Loading" HorizontalAlignment="Center" Height="15" VerticalAlignment="Center" Width="325" Template="{StaticResource ProgressBarMod}" Foreground="{x:Null}" BorderBrush="{x:Null}" Margin="0,231,0,292"/>
-            <TextBlock x:Name="TextBlock_Loading_Info" HorizontalAlignment="Center" Margin="245,256,242,268" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="15" FontFamily="Poppins" FontSize="10" FontWeight="Light" Foreground="{DynamicResource TextBlock_Loading_Info}" Text="STATUS" Visibility="Visible" />
-            <Button x:Name="Button_Loading_See" Template="{DynamicResource ButtonModSee}" Content="See" HorizontalAlignment="Left" Margin="176,300,0,194" VerticalAlignment="Top" Height="43" Width="80" FontFamily="Poppins" FontWeight="Medium" Foreground="#FF369FFF" Background="#FF666666" FontSize="15" Click="Button_Loading_See_Click" IsEnabled="False" />
+            <TextBlock x:Name="TextBlock_Loading_Info" HorizontalAlignment="Center" Margin="245,256,242,268" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="15" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="10" FontWeight="Light" Foreground="{DynamicResource TextBlock_Loading_Info}" Text="STATUS" Visibility="Visible" />
+            <Button x:Name="Button_Loading_See" Template="{DynamicResource ButtonModSee}" Content="See" HorizontalAlignment="Left" Margin="176,300,0,194" VerticalAlignment="Top" Height="43" Width="80" FontFamily="pack://application:,,,/Fonts/#Poppins" FontWeight="Medium" Foreground="#FF369FFF" Background="#FF666666" FontSize="15" Click="Button_Loading_See_Click" IsEnabled="False" />
         </Grid>
         <Grid x:Name="Grid_Results" HorizontalAlignment="Center" Height="538" Margin="0,62,0,0" VerticalAlignment="Top" Width="600" Background="{DynamicResource Grid_Results}" Visibility="Hidden">
             <local:DataGridMod x:Name="DataGrid_Results" Margin="130,68,130,138" GridLinesVisibility="None" Background="{x:Null}" IsReadOnly="True" AutoGenerateColumns="False" SelectionMode="Single" UpshowVisibility="Hidden" ScrollViewer.ScrollChanged="DataGrid_Results_ScrollChanged" VirtualizingPanel.ScrollUnit="Pixel">
@@ -923,11 +888,11 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <TextBlock x:Name="Risultati_Ip" Text="{Binding Converter={StaticResource ipConverter}}" Margin="10,10,0,48" FontFamily="Poppins" FontSize="20" FontWeight="Medium" Foreground="#FFF4F4F4"/>
+                                    <TextBlock x:Name="Risultati_Ip" Text="{Binding Converter={StaticResource ipConverter}}" Margin="10,10,0,48" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="20" FontWeight="Medium" Foreground="#FFF4F4F4"/>
                                     <Border x:Name="Copia_Risultati_Ip" MouseLeftButtonDown="Border_Ip_Copia" Width="19" Height="22" Margin="199,13,10,51" Background="Transparent">
                                         <Path x:Name="Path_Copia_Risultati_Ip" Width="19" Height="22" Stretch="uniform" Data="M 15 1 L 4 1 C 2.900000095367432 1 2 1.899999976158142 2 3 L 2 16 C 2 16.54999923706055 2.450000047683716 17 3 17 C 3.549999952316284 17 4 16.54999923706055 4 16 L 4 4 C 4 3.450000047683716 4.449999809265137 3 5 3 L 15 3 C 15.55000019073486 3 16 2.549999952316284 16 2 C 16 1.450000047683716 15.55000019073486 1 15 1 Z M 19 5 L 8 5 C 6.900000095367432 5 6 5.900000095367432 6 7 L 6 21 C 6 22.10000038146973 6.900000095367432 23 8 23 L 19 23 C 20.10000038146973 23 21 22.10000038146973 21 21 L 21 7 C 21 5.900000095367432 20.10000038146973 5 19 5 Z M 18 21 L 9 21 C 8.449999809265137 21 8 20.54999923706055 8 20 L 8 8 C 8 7.449999809265137 8.449999809265137 7 9 7 L 18 7 C 18.54999923706055 7 19 7.449999809265137 19 8 L 19 20 C 19 20.54999923706055 18.54999923706055 21 18 21 Z" Fill="#FF369FFF"/>
                                     </Border>
-                                    <TextBlock x:Name="Risultati_Port" Text="{Binding Converter={StaticResource portconverter}}" Margin="10,48,0,10" FontFamily="Poppins" FontSize="20" FontWeight="Medium" Foreground="#FFF4F4F4"/>
+                                    <TextBlock x:Name="Risultati_Port" Text="{Binding Converter={StaticResource portconverter}}" Margin="10,48,0,10" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="20" FontWeight="Medium" Foreground="#FFF4F4F4"/>
                                     <Border x:Name="Copia_Risultati_Port" MouseLeftButtonDown="Border_Port_Copia" Width="19" Height="22" Margin="199,51,10,13" Background="Transparent">
                                         <Path x:Name="Path_Copia_Risultati_Port" Width="19" Height="22" Stretch="uniform" Data="M 15 1 L 4 1 C 2.900000095367432 1 2 1.899999976158142 2 3 L 2 16 C 2 16.54999923706055 2.450000047683716 17 3 17 C 3.549999952316284 17 4 16.54999923706055 4 16 L 4 4 C 4 3.450000047683716 4.449999809265137 3 5 3 L 15 3 C 15.55000019073486 3 16 2.549999952316284 16 2 C 16 1.450000047683716 15.55000019073486 1 15 1 Z M 19 5 L 8 5 C 6.900000095367432 5 6 5.900000095367432 6 7 L 6 21 C 6 22.10000038146973 6.900000095367432 23 8 23 L 19 23 C 20.10000038146973 23 21 22.10000038146973 21 21 L 21 7 C 21 5.900000095367432 20.10000038146973 5 19 5 Z M 18 21 L 9 21 C 8.449999809265137 21 8 20.54999923706055 8 20 L 8 8 C 8 7.449999809265137 8.449999809265137 7 9 7 L 18 7 C 18.54999923706055 7 19 7.449999809265137 19 8 L 19 20 C 19 20.54999923706055 18.54999923706055 21 18 21 Z" Fill="#FF369FFF"/>
                                     </Border>
@@ -1004,10 +969,10 @@
             </Border.Effect>
             <Canvas>
                 <Canvas Margin="41,7,0,0" Width="40" Height="28">
-                    <TextBlock x:Name="Textblock_Bar_Upp"  Text="Proxime" TextWrapping="Wrap"  FontFamily="Poppins" FontWeight="Bold" FontSize="20" Width="79" Height="28" Foreground="{DynamicResource Textblock_Bar_Upp}" MouseLeftButtonDown="Textblock_Bar_Upp_MouseClick" IsEnabled="False"/>
+                    <TextBlock x:Name="Textblock_Bar_Upp"  Text="Proxime" TextWrapping="Wrap"  FontFamily="pack://application:,,,/Fonts/#Poppins" FontWeight="Bold" FontSize="20" Width="88" Height="28" Foreground="{DynamicResource Textblock_Bar_Upp}" MouseLeftButtonDown="Textblock_Bar_Upp_MouseClick" IsEnabled="False" Cursor="Hand"/>
                 </Canvas>
                 <Canvas Margin="269.6,7,0,0" Width="61" Height="28">
-                    <TextBlock x:Name="Textblock_Bar_Home" HorizontalAlignment="Center" Text="Home" TextWrapping="Wrap" VerticalAlignment="Top"  FontFamily="Poppins" FontWeight="Bold" FontSize="20" Width="61" Height="28" Foreground="{DynamicResource Textblock_Bar_Home}"/>
+                    <TextBlock x:Name="Textblock_Bar_Home" HorizontalAlignment="Center" Text="Home" TextWrapping="Wrap" VerticalAlignment="Top"  FontFamily="pack://application:,,,/Fonts/#Poppins" FontWeight="Bold" FontSize="20" Width="61" Height="28" Foreground="{DynamicResource Textblock_Bar_Home}"/>
                 </Canvas>
                 <Canvas x:Name="Bord_Bar_Settings" Background="Transparent" Width="19.45" Height="20" HorizontalAlignment="Right" Margin="560.5,12,20,0" VerticalAlignment="Top" MouseEnter="Bord_Bar_Settings_MouseEvent" MouseLeave="Bord_Bar_Settings_MouseEvent" MouseLeftButtonDown="Bord_Bar_Settings_MouseClick" MouseUp="Bord_Bar_Settings_MouseUp" Cursor="Hand">
                     <Path x:Name="Path_Bar_Settings" Width="19.45" Height="20" Stretch="uniform" Data="M 19.43000030517578 12.97999954223633 C 19.47000122070313 12.65999984741211 19.5 12.33999919891357 19.5 12 C 19.5 11.66000080108643 19.46999931335449 11.34000015258789 19.43000030517578 11.02000045776367 L 21.54000091552734 9.370000839233398 C 21.73000144958496 9.220001220703125 21.78000068664551 8.950000762939453 21.66000175476074 8.730000495910645 L 19.66000175476074 5.270000457763672 C 19.54000091552734 5.050000667572021 19.2700023651123 4.970000267028809 19.05000114440918 5.050000667572021 L 16.56000137329102 6.050000667572021 C 16.04000091552734 5.65000057220459 15.48000144958496 5.320000648498535 14.8700008392334 5.070000648498535 L 14.49000072479248 2.420000553131104 C 14.46000003814697 2.180000066757202 14.25 2 14 2 L 10 2 C 9.75 2 9.539999961853027 2.180000066757202 9.510000228881836 2.420000076293945 L 9.130000114440918 5.070000171661377 C 8.520000457763672 5.320000171661377 7.960000038146973 5.660000324249268 7.440000057220459 6.050000190734863 L 4.949999809265137 5.050000190734863 C 4.71999979019165 4.960000038146973 4.460000038146973 5.050000190734863 4.339999675750732 5.269999980926514 L 2.339999675750732 8.729999542236328 C 2.209999561309814 8.949999809265137 2.269999742507935 9.219999313354492 2.459999561309814 9.369999885559082 L 4.569999694824219 11.01999950408936 C 4.529999732971191 11.33999919891357 4.499999523162842 11.66999912261963 4.499999523162842 12 C 4.499999523162842 12.33000087738037 4.529999732971191 12.65999984741211 4.569999694824219 12.97999954223633 L 2.459999799728394 14.6299991607666 C 2.269999742507935 14.77999877929688 2.21999979019165 15.04999923706055 2.339999914169312 15.26999950408936 L 4.340000152587891 18.72999954223633 C 4.460000038146973 18.94999885559082 4.730000019073486 19.02999877929688 4.950000286102295 18.94999885559082 L 7.440000534057617 17.94999885559082 C 7.960000514984131 18.34999847412109 8.520000457763672 18.67999839782715 9.130001068115234 18.92999839782715 L 9.510001182556152 21.57999801635742 C 9.540000915527344 21.81999778747559 9.750000953674316 21.99999809265137 10.00000095367432 21.99999809265137 L 14.00000095367432 21.99999809265137 C 14.25000095367432 21.99999809265137 14.46000099182129 21.81999778747559 14.49000072479248 21.57999801635742 L 14.8700008392334 18.92999839782715 C 15.48000049591064 18.67999839782715 16.04000091552734 18.33999824523926 16.56000137329102 17.94999885559082 L 19.05000114440918 18.94999885559082 C 19.28000068664551 19.03999900817871 19.54000091552734 18.94999885559082 19.66000175476074 18.72999954223633 L 21.66000175476074 15.26999950408936 C 21.78000259399414 15.04999923706055 21.73000144958496 14.77999973297119 21.54000091552734 14.6299991607666 L 19.43000030517578 12.97999954223633 Z M 12 15.5 C 10.06999969482422 15.5 8.5 13.93000030517578 8.5 12 C 8.5 10.06999969482422 10.06999969482422 8.5 12 8.5 C 13.93000030517578 8.5 15.5 10.06999969482422 15.5 12 C 15.5 13.93000030517578 13.93000030517578 15.5 12 15.5 Z" Fill="#FFF4F4F4" HorizontalAlignment="Right" VerticalAlignment="Top"/>
