@@ -294,7 +294,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type DataGridCell}">
                         <Border x:Name="border"
-                SnapsToDevicePixels="True" Width="228" Background="Transparent">
+                SnapsToDevicePixels="True" Width="228" Background="Transparent" Cursor="Hand">
                             <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                         </Border>
                     </ControlTemplate>
@@ -346,6 +346,7 @@
             </Setter>
         </Style>
         <Style TargetType="{x:Type DataGridRowHeader}">
+            <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Opacity" Value="0"/>
         </Style>
         <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -855,8 +856,8 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Grid x:Name="Grid_Home_Scan" HorizontalAlignment="Left" Height="538" VerticalAlignment="Top" Width="300" Background="{DynamicResource Grid_Home_Scan}" MouseEnter="Grid_Home_Scan_MouseEvent" MouseLeave="Grid_Home_Scan_MouseEvent" MouseLeftButtonDown="Grid_Home_Scan_MouseClick" MouseUp="Grid_Home_Scan_MouseUp" Visibility="Visible" Cursor="Hand" Margin="0,62,0,0">
-            <TextBlock x:Name="Textblock_Home_Scan" Margin="0,201,0,0" Text="Scan" TextWrapping="Wrap" Height="71" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="50" FontWeight="Bold" Foreground="{DynamicResource Textblock_Home_Scan}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="129" Cursor="Hand"/>
-            <TextBlock x:Name="Textblock_Home_Scan_Search"  Margin="106,274,107,0" Text="Search for proxies" TextWrapping="Wrap" Height="15" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="10" FontWeight="Light" Foreground="{DynamicResource Textblock_Home_Scan_Search}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="89"/>
+            <TextBlock x:Name="Textblock_Home_Scan" Margin="0,201,0,0" Text="Scan" TextWrapping="Wrap" Height="71" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="50" FontWeight="Bold" Foreground="{DynamicResource Textblock_Home_Scan}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="129"/>
+            <TextBlock x:Name="Textblock_Home_Scan_Search"  Margin="105,274,107,0" Text="Search for proxies" TextWrapping="Wrap" Height="15" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="10" FontWeight="Light" Foreground="{DynamicResource Textblock_Home_Scan_Search}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="89"/>
         </Grid>
         <Grid x:Name="Grid_Home_Test" HorizontalAlignment="Left" Height="538" Margin="300,62,0,0" VerticalAlignment="Top" Width="300" Background="{DynamicResource Grid_Home_Test}" MouseEnter="Grid_Home_Test_MouseEvent" MouseLeave="Grid_Home_Test_MouseEvent" MouseLeftButtonDown="Grid_Home_Test_MouseClick" AllowDrop="True" Drop="Grid_Home_Test_DragDrop" PreviewDragEnter="Grid_Home_Test_PreviewDrop" PreviewDragLeave="Grid_Home_Test_PreviewDragLeave" MouseUp="Grid_Home_Test_MouseUp" Visibility="Visible" Cursor="Hand" >
             <TextBlock x:Name="Textblock_Home_Test" Margin="0,201,0,0" Text="Test" TextWrapping="Wrap" Height="71" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="50" FontWeight="Bold" Foreground="{DynamicResource Textblock_Home_Test}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="109"/>
@@ -864,10 +865,10 @@
         </Grid>
         <Grid x:Name="Grid_Settings" HorizontalAlignment="Center" Height="538" Margin="0,62,0,0" VerticalAlignment="Top" Width="600" Background="{DynamicResource Grid_Settings}" Visibility="Hidden">
             <TextBlock x:Name="Textblock_Settings_Test" HorizontalAlignment="Left" Margin="137,97,369,60" Text="Auto Test" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Height="28" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource Textblock_Settings_Test}"/>
-            <CheckBox x:Name="Checkbox_Settings_Test" Content="CheckBox" Margin="419,89,94,0" VerticalAlignment="Top" Template="{StaticResource CheckBoxMod}" Height="47" Width="87" RenderTransformOrigin="0.5,0.5" Checked="Checkbox_Settings_Test_Checked" Unchecked="Checkbox_Settings_Test_Checked"/>
+            <CheckBox x:Name="Checkbox_Settings_Test" Content="CheckBox" Margin="419,89,94,0" VerticalAlignment="Top" Template="{StaticResource CheckBoxMod}" Height="47" Width="87" RenderTransformOrigin="0.5,0.5" Checked="Checkbox_Settings_Test_Checked" Unchecked="Checkbox_Settings_Test_Checked" Cursor="Hand"/>
             <TextBlock x:Name="Textblock_Settings_Threads" HorizontalAlignment="Left" Margin="138,182,293,281" Text="Threads Number" TextWrapping="Wrap" VerticalAlignment="Center" Width="170" Height="28" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource Textblock_Settings_Threads}"/>
             <TextBlock x:Name="Textblock_Settings_Proxy" HorizontalAlignment="Left" Margin="137,318,355,192" Text="Proxy Type" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" Height="28" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="20" FontWeight="Medium" Foreground="{DynamicResource Textblock_Settings_Proxy}"/>
-            <local:ComboboxModde x:Name="Combobox_Settings_Proxy" HorizontalAlignment="Left" Margin="377,319,0,0" VerticalAlignment="Top" Width="88" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="15" FontWeight="Regular" Foreground="#FFF4F4F4"  ScrollViewer.VerticalScrollBarVisibility="Disabled" Lvis="Visible" SelectedIndex="0" SelectionChanged="Combobox_Settings_Proxy_SelectionChanged">
+            <local:ComboboxModde x:Name="Combobox_Settings_Proxy" HorizontalAlignment="Left" Margin="377,319,0,0" VerticalAlignment="Top" Width="88" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="15" FontWeight="Regular" Foreground="#FFF4F4F4"  ScrollViewer.VerticalScrollBarVisibility="Disabled" Lvis="Visible" SelectedIndex="0" SelectionChanged="Combobox_Settings_Proxy_SelectionChanged" Cursor="Hand">
                 <TextBlock>Http</TextBlock>
                 <TextBlock>Https</TextBlock>
                 <TextBlock>Socks4</TextBlock>
@@ -876,10 +877,10 @@
             <local:NumericUpDown x:Name="NumericUpDown_Settings_Proxy" HorizontalAlignment="Left" Margin="401,201,0,281" VerticalAlignment="Top" Height="39" Valore="255" Width="63"/>
         </Grid>
         <Grid x:Name="Grid_Loading" HorizontalAlignment="Center" Height="538" Margin="0,62,0,0" VerticalAlignment="Top" Width="600" Background="{DynamicResource Grid_Loading}" Visibility="Hidden">
-            <Button x:Name="Button_Loading_Save" Template="{DynamicResource ButtonModSave}" Content="Save" HorizontalAlignment="Left" Margin="344,300,0,194" VerticalAlignment="Top" Height="43" Width="80" FontFamily="pack://application:,,,/Fonts/#Poppins" FontWeight="Medium" Foreground="#FF369FFF" Background="#FF666666" FontSize="15" Click="Button_Loading_Save_Click" IsEnabled="False" />
+            <Button x:Name="Button_Loading_Save" Template="{DynamicResource ButtonModSave}" Content="Save" HorizontalAlignment="Left" Margin="344,300,0,194" VerticalAlignment="Top" Height="43" Width="80" FontFamily="pack://application:,,,/Fonts/#Poppins" FontWeight="Medium" Foreground="#FF369FFF" Background="#FF666666" FontSize="15" Click="Button_Loading_Save_Click" IsEnabled="False" Cursor="Hand" />
             <ProgressBar x:Name="ProgressBar_Loading" HorizontalAlignment="Center" Height="15" VerticalAlignment="Center" Width="325" Template="{StaticResource ProgressBarMod}" Foreground="{x:Null}" BorderBrush="{x:Null}" Margin="0,231,0,292"/>
             <TextBlock x:Name="TextBlock_Loading_Info" HorizontalAlignment="Center" Margin="245,256,242,268" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="15" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="10" FontWeight="Light" Foreground="{DynamicResource TextBlock_Loading_Info}" Text="STATUS" Visibility="Visible" />
-            <Button x:Name="Button_Loading_See" Template="{DynamicResource ButtonModSee}" Content="See" HorizontalAlignment="Left" Margin="176,300,0,194" VerticalAlignment="Top" Height="43" Width="80" FontFamily="pack://application:,,,/Fonts/#Poppins" FontWeight="Medium" Foreground="#FF369FFF" Background="#FF666666" FontSize="15" Click="Button_Loading_See_Click" IsEnabled="False" />
+            <Button x:Name="Button_Loading_See" Template="{DynamicResource ButtonModSee}" Content="See" HorizontalAlignment="Left" Margin="176,300,0,194" VerticalAlignment="Top" Height="43" Width="80" FontFamily="pack://application:,,,/Fonts/#Poppins" FontWeight="Medium" Foreground="#FF369FFF" Background="#FF666666" FontSize="15" Click="Button_Loading_See_Click" IsEnabled="False" Cursor="Hand" />
         </Grid>
         <Grid x:Name="Grid_Results" HorizontalAlignment="Center" Height="538" Margin="0,62,0,0" VerticalAlignment="Top" Width="600" Background="{DynamicResource Grid_Results}" Visibility="Hidden">
             <local:DataGridMod x:Name="DataGrid_Results" Margin="130,68,130,138" GridLinesVisibility="None" Background="{x:Null}" IsReadOnly="True" AutoGenerateColumns="False" SelectionMode="Single" UpshowVisibility="Hidden" ScrollViewer.ScrollChanged="DataGrid_Results_ScrollChanged" VirtualizingPanel.ScrollUnit="Pixel">
@@ -889,11 +890,11 @@
                             <DataTemplate>
                                 <Grid>
                                     <TextBlock x:Name="Risultati_Ip" Text="{Binding Converter={StaticResource ipConverter}}" Margin="10,10,0,48" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="20" FontWeight="Medium" Foreground="#FFF4F4F4"/>
-                                    <Border x:Name="Copia_Risultati_Ip" MouseLeftButtonDown="Border_Ip_Copia" Width="19" Height="22" Margin="199,13,10,51" Background="Transparent">
+                                    <Border x:Name="Copia_Risultati_Ip" MouseLeftButtonDown="Border_Ip_Copia" Width="19" Height="22" Margin="199,13,10,51" Background="Transparent" Cursor="Hand">
                                         <Path x:Name="Path_Copia_Risultati_Ip" Width="19" Height="22" Stretch="uniform" Data="M 15 1 L 4 1 C 2.900000095367432 1 2 1.899999976158142 2 3 L 2 16 C 2 16.54999923706055 2.450000047683716 17 3 17 C 3.549999952316284 17 4 16.54999923706055 4 16 L 4 4 C 4 3.450000047683716 4.449999809265137 3 5 3 L 15 3 C 15.55000019073486 3 16 2.549999952316284 16 2 C 16 1.450000047683716 15.55000019073486 1 15 1 Z M 19 5 L 8 5 C 6.900000095367432 5 6 5.900000095367432 6 7 L 6 21 C 6 22.10000038146973 6.900000095367432 23 8 23 L 19 23 C 20.10000038146973 23 21 22.10000038146973 21 21 L 21 7 C 21 5.900000095367432 20.10000038146973 5 19 5 Z M 18 21 L 9 21 C 8.449999809265137 21 8 20.54999923706055 8 20 L 8 8 C 8 7.449999809265137 8.449999809265137 7 9 7 L 18 7 C 18.54999923706055 7 19 7.449999809265137 19 8 L 19 20 C 19 20.54999923706055 18.54999923706055 21 18 21 Z" Fill="#FF369FFF"/>
                                     </Border>
                                     <TextBlock x:Name="Risultati_Port" Text="{Binding Converter={StaticResource portconverter}}" Margin="10,48,0,10" FontFamily="pack://application:,,,/Fonts/#Poppins" FontSize="20" FontWeight="Medium" Foreground="#FFF4F4F4"/>
-                                    <Border x:Name="Copia_Risultati_Port" MouseLeftButtonDown="Border_Port_Copia" Width="19" Height="22" Margin="199,51,10,13" Background="Transparent">
+                                    <Border x:Name="Copia_Risultati_Port" MouseLeftButtonDown="Border_Port_Copia" Width="19" Height="22" Margin="199,51,10,13" Background="Transparent" Cursor="Hand">
                                         <Path x:Name="Path_Copia_Risultati_Port" Width="19" Height="22" Stretch="uniform" Data="M 15 1 L 4 1 C 2.900000095367432 1 2 1.899999976158142 2 3 L 2 16 C 2 16.54999923706055 2.450000047683716 17 3 17 C 3.549999952316284 17 4 16.54999923706055 4 16 L 4 4 C 4 3.450000047683716 4.449999809265137 3 5 3 L 15 3 C 15.55000019073486 3 16 2.549999952316284 16 2 C 16 1.450000047683716 15.55000019073486 1 15 1 Z M 19 5 L 8 5 C 6.900000095367432 5 6 5.900000095367432 6 7 L 6 21 C 6 22.10000038146973 6.900000095367432 23 8 23 L 19 23 C 20.10000038146973 23 21 22.10000038146973 21 21 L 21 7 C 21 5.900000095367432 20.10000038146973 5 19 5 Z M 18 21 L 9 21 C 8.449999809265137 21 8 20.54999923706055 8 20 L 8 8 C 8 7.449999809265137 8.449999809265137 7 9 7 L 18 7 C 18.54999923706055 7 19 7.449999809265137 19 8 L 19 20 C 19 20.54999923706055 18.54999923706055 21 18 21 Z" Fill="#FF369FFF"/>
                                     </Border>
                                 </Grid>
@@ -981,7 +982,7 @@
         </Border>
         <Border x:Name="Windows_Bar" HorizontalAlignment="Stretch" Height="20" VerticalAlignment="Top" Width="600" Background="{DynamicResource Windows_Bar}" Visibility="Visible">
             <Canvas>
-                <Canvas x:Name="Canvas_Window_Bar_Reduce" Margin="559,0,20,0" Width="21" Height="20" Background="Transparent" WindowChrome.IsHitTestVisibleInChrome="True" MouseEnter="Canvas_Window_Bar_Reduce_MouseEvent" MouseLeave="Canvas_Window_Bar_Reduce_MouseEvent" MouseLeftButtonDown="Canvas_Window_Bar_Reduce_MouseLeftButtonDown" MouseUp="Canvas_Window_Bar_Reduce_MouseUp">
+                <Canvas x:Name="Canvas_Window_Bar_Reduce" Margin="559,0,20,0" Width="21" Height="20" Background="Transparent" WindowChrome.IsHitTestVisibleInChrome="True" MouseEnter="Canvas_Window_Bar_Reduce_MouseEvent" MouseLeave="Canvas_Window_Bar_Reduce_MouseEvent" MouseLeftButtonDown="Canvas_Window_Bar_Reduce_MouseLeftButtonDown" MouseUp="Canvas_Window_Bar_Reduce_MouseUp" Cursor="Hand">
                     <Path x:Name="path3" Data="M3.5625,12.5625 L15.625,12.375" Height="2" Canvas.Left="0" Stretch="Fill" Stroke="{DynamicResource Canvas_Window_Bar_Reduce}" Canvas.Top="0" Width="10" Margin="5,13,6.5,6" StrokeStartLineCap="Round" StrokeEndLineCap="Round" RenderTransformOrigin="0.5,0.5" StrokeThickness="2">
                         <Path.RenderTransform>
                             <TransformGroup>

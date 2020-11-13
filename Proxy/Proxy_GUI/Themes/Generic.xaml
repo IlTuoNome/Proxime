@@ -72,8 +72,8 @@
                             <TextBlock x:Name="TextblockNumUpDown"  FontFamily="pack://application:,,,/Fonts/#Poppins" Text="{Binding RelativeSource={RelativeSource FindAncestor, 
                        AncestorType={x:Type local:NumericUpDown}}, 
                        Path=Valore}" Margin="10,5,26,5" Width="27" FontSize="15" FontWeight="Regular" Foreground="#FFF4F4F4" Height="21"/>
-                            <RepeatButton x:Name="RepeatUp" Template="{StaticResource RepeatButtonModUp}" Margin="42,6.4,9.9,17"/>
-                            <RepeatButton x:Name="RepeatDown" Template="{StaticResource RepeatButtonModDown}" Margin="42,0,10,6" VerticalAlignment="Bottom"/>
+                            <RepeatButton x:Name="RepeatUp" Template="{StaticResource RepeatButtonModUp}" Margin="42,6.4,9.9,17" Cursor="Hand"/>
+                            <RepeatButton x:Name="RepeatDown" Template="{StaticResource RepeatButtonModDown}" Margin="42,0,10,6" VerticalAlignment="Bottom" Cursor="Hand"/>
                         </Grid>
                     </Border>
                 </ControlTemplate>
@@ -177,19 +177,16 @@
                             </ScrollViewer>
                         </Border>
                         <Grid x:Name="Grid_Up" Margin="239,267,16,16" VerticalAlignment="Bottom" Width="40" Height="40" Visibility="{TemplateBinding UpshowVisibility}">
-                            <Ellipse x:Name="Ellipse_Up" Fill="#FF369FFF" Height="40" Width="40">
+                            <Ellipse x:Name="Ellipse_Up" Fill="#FF369FFF" Height="40" Width="40" Cursor="Hand">
                                 <Ellipse.Effect>
                                     <DropShadowEffect Color="{DynamicResource ProgressBar_Loading_Shadow}" Direction="270" ShadowDepth="{DynamicResource Button_ShadowDepth}" BlurRadius="10" Opacity="0.5"/>
                                 </Ellipse.Effect>
                             </Ellipse>
-                            <Path x:Name="Path_Up" Data="M 13.77845287322998 20.18114471435547 L 13.77845287322998 8.106403350830078 L 19.1005687713623 13.38167095184326 C 19.52589988708496 13.80326080322266 20.22388458251953 13.80326080322266 20.64921569824219 13.38167095184326 C 21.07454681396484 12.96008205413818 21.07454681396484 12.27905464172363 20.64921569824219 11.85746574401855 L 13.46218109130859 4.733691692352295 C 13.03684902191162 4.312103271484375 12.34977149963379 4.312103271484375 11.92443943023682 4.733691692352295 L 4.726500988006592 11.84665489196777 C 4.301167964935303 12.26824474334717 4.301167964935303 12.94927310943604 4.726500988006592 13.3708610534668 C 5.151834011077881 13.79244995117188 5.838910102844238 13.79244995117188 6.264242649078369 13.3708610534668 L 11.59725952148438 8.106403350830078 L 11.59725952148438 20.18114471435547 C 11.59725952148438 20.77569389343262 12.08802700042725 21.26214218139648 12.68785762786865 21.26214218139648 C 13.28768539428711 21.26214218139648 13.77845287322998 20.77569389343262 13.77845287322998 20.18114471435547 Z" Fill="{DynamicResource DataGrid_Results_Path_Up}" Height="16.84" Stretch="uniform" Width="16.56"/>
+                            <Path x:Name="Path_Up" Data="M 13.77845287322998 20.18114471435547 L 13.77845287322998 8.106403350830078 L 19.1005687713623 13.38167095184326 C 19.52589988708496 13.80326080322266 20.22388458251953 13.80326080322266 20.64921569824219 13.38167095184326 C 21.07454681396484 12.96008205413818 21.07454681396484 12.27905464172363 20.64921569824219 11.85746574401855 L 13.46218109130859 4.733691692352295 C 13.03684902191162 4.312103271484375 12.34977149963379 4.312103271484375 11.92443943023682 4.733691692352295 L 4.726500988006592 11.84665489196777 C 4.301167964935303 12.26824474334717 4.301167964935303 12.94927310943604 4.726500988006592 13.3708610534668 C 5.151834011077881 13.79244995117188 5.838910102844238 13.79244995117188 6.264242649078369 13.3708610534668 L 11.59725952148438 8.106403350830078 L 11.59725952148438 20.18114471435547 C 11.59725952148438 20.77569389343262 12.08802700042725 21.26214218139648 12.68785762786865 21.26214218139648 C 13.28768539428711 21.26214218139648 13.77845287322998 20.77569389343262 13.77845287322998 20.18114471435547 Z" Fill="{DynamicResource DataGrid_Results_Path_Up}" Height="16.84" Stretch="uniform" Width="16.56" IsHitTestVisible="False"/>
                         </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true" SourceName="Ellipse_Up">
-                            <Setter Property="Fill" Value="#0061FF" TargetName="Ellipse_Up"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="true" SourceName="Path_Up">
                             <Setter Property="Fill" Value="#0061FF" TargetName="Ellipse_Up"/>
                         </Trigger>
                         <EventTrigger RoutedEvent="MouseLeftButtonDown" SourceName="Ellipse_Up">
@@ -202,24 +199,6 @@
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseUp" SourceName="Ellipse_Up">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="Ellipse_Up" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
-                                        <EasingColorKeyFrame KeyTime="00:00:00" Value="#0061FF"/>
-                                    </ColorAnimationUsingKeyFrames>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="MouseLeftButtonDown" SourceName="Path_Up">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimationUsingKeyFrames Storyboard.TargetName="Ellipse_Up" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
-                                        <EasingColorKeyFrame KeyTime="00:00:00" Value="#B20061FF"/>
-                                    </ColorAnimationUsingKeyFrames>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="MouseUp" SourceName="Path_Up">
                             <BeginStoryboard>
                                 <Storyboard>
                                     <ColorAnimationUsingKeyFrames Storyboard.TargetName="Ellipse_Up" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
@@ -277,6 +256,7 @@
 
     <Style x:Key="ComboboxitemMod"
        TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="SnapsToDevicePixels"
           Value="true" />
         <Setter Property="OverridesDefaultStyle"
