@@ -53,7 +53,7 @@ namespace Proxy_GUI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Proxy_GUI;component/themes/generic.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Proxy_GUI;V1.0.0.0;component/themes/generic.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Themes\Generic.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

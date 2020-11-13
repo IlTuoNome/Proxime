@@ -188,7 +188,7 @@ namespace Proxy_GUI
         /// <summary>
         /// Method to manage the click on UPP to return to the home in the bar
         /// </summary>
-        private void Textblock_Bar_Upp_MouseClick(object sender, MouseEventArgs e)
+        private void Textblock_Bar_Upp_MouseClick(object sender, MouseButtonEventArgs e)
         {
             VisualStateManager.GoToElementState(Grid_Base, "MouseUPPClick", false);
         }
@@ -791,6 +791,7 @@ namespace Proxy_GUI
         }
 
         #endregion
+
     }
 
     /// <summary>
