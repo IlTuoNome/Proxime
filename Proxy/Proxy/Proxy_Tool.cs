@@ -49,7 +49,20 @@ namespace Proxy
 
                 try
                 {
-                    Risposta = Richiesta.Get($"https://api.proxyscrape.com/?request=getproxies&proxytype={Type}&timeout=10000&country=all&ssl=all&anonymity=all").ToString();
+                    string Link;
+                    switch (Type)
+                    {
+                        case Proxy_Type.http:
+                            Link = "https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all&ssl=no&anonymity=all&simplified=true";
+                            break;
+                        case Proxy_Type.https:
+                            Link = "https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all&ssl=yes&anonymity=all&simplified=true";
+                            break;
+                        default:
+                            Link = $"https://api.proxyscrape.com/v2/?request=getproxies&protocol={Type}&timeout=10000&country=all";
+                            break;
+                    }
+                    Risposta = Richiesta.Get(Link).ToString();
                 }
                 catch (HttpException)
                 {
