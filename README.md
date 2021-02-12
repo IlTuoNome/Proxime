@@ -48,12 +48,12 @@ Proxy_Tool Proxy = new Proxy_Tool();
 
         static void Ip_Rec(object sender, IPRec Ips)
         {
-            Console.WriteLine($"Ip recovered:" + Ips.Ips_Count);
+            Console.WriteLine("Ip recovered:" + Ips.Ips_Count);
         }
 
         static void Test_Rec(object sender, TestRec Ips)
         {
-            Console.WriteLine($"Ip tested valid:" + Ips.Ips_Val_Count);
+            Console.WriteLine("Ip tested valid:" + Ips.Ips_Val_Count);
         }
 ```
 
@@ -71,7 +71,7 @@ Start an asynchronous recovery:
         static async void StartRecover()
         {
             IPRec Ips = await Proxy.Recovery_Async(Proxy_Type Type);
-            Console.WriteLine($"Ip recovered:" + Ips.Ips_Count);
+            Console.WriteLine("Ip recovered:" + Ips.Ips_Count);
         }
 ```
 The return value will contain the instance with the ip addresses found.
@@ -88,7 +88,7 @@ Start the test asynchronously:
         static async void StartTest()
         {
             TestRec Ips_Test = await Proxy.Test_Async(Proxy_Type Type, string[] Ips, byte Threads);
-            Console.WriteLine($"Ip tested valid:" + Ips_Test.Ips_Val_Count);
+            Console.WriteLine("Ip tested valid:" + Ips_Test.Ips_Val_Count);
         }
 ```
 The return value will contain the instance with valid tested ip addresses.
